@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:server_access/constants.dart';
 
 import 'data/page 1.dart';
 import 'history_screen.dart';
+
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +17,44 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isNotification = true;
+
+  Future<void> watch() async {
+    final String apiUrl = 'https://server.pepethesol.com/api/watch/';
+
+    print("watch");
+
+    try {
+      final response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {
+          'Content-Type': 'application/json',
+          "authorization": "Bearer ${Constants.store.read("AUTHTOKEN")}"
+        },
+      );
+
+      var responseData = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        // Successful sign-up
+        print('watch get');
+        print('Response: ${response.body}');
+      } else {
+        // Handle sign-up failure
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(responseData['message']),
+        ));
+        // print('Incorrect Pin. Status code: ${response.statusCode}');
+        print('Response: ${response.body}');
+      }
+    } catch (e) {
+      // Handle errors
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(e.toString()),
+        duration: Duration(seconds: 5),
+      ));
+      print('Error: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    // watch();
                     setState(() {
                       isNotification = false;
                     });

@@ -47,11 +47,11 @@ class _SplashScreenState extends State<SplashScreen>
             height: 812,
             clipBehavior: Clip.antiAlias,
             decoration: const BoxDecoration(color: Color(0xFFFDFDFD)),
-            child: Column(
+            child: const Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'サーバ\nアクセス',
                   textAlign: TextAlign.center,
