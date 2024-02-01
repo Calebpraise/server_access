@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "594308239628",
+    "project_id": "serveraccess-e87b0",
+    "storage_bucket": "serveraccess-e87b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594308239628:android:dc2943a5f87432cbebf929",
+        "android_client_info": {
+          "package_name": "com.example.server_access"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH_Yc--dFiTQwddM8aGrgMDCSt_oQRfQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
