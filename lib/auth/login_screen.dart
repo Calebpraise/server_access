@@ -32,6 +32,7 @@ class _Login_screenState extends State<Login_screen> {
         headers: {
           'accept': 'application/json',
           'Content-Type': 'application/json',
+          "authorization": "Bearer ${Constants.store.read("AUTHTOKEN")}"
         },
         body: json.encode({
           'email': email,
@@ -98,16 +99,17 @@ class _Login_screenState extends State<Login_screen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text('Last message from Firebase Messaging:',
-                    style: Theme.of(context).textTheme.titleSmall),
-                Text(_lastMessage,
-                    style: Theme.of(context).textTheme.bodySmall),
-                const SizedBox(
-                  height: 60,
-                ),
+                // Text('Last message from Firebase Messaging:',
+                //     style: Theme.of(context).textTheme.titleSmall),
+                // Text(_lastMessage,
+                //     style: Theme.of(context).textTheme.bodySmall),
+                // const SizedBox(
+                //   height: 60,
+                // ),
                 const Center(
+                  //ogin
                   child: Text(
-                    'Login',
+                    'ログイン',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -123,8 +125,9 @@ class _Login_screenState extends State<Login_screen> {
                   padding: EdgeInsets.symmetric(horizontal: 72),
                   child: Align(
                     alignment: Alignment.topLeft,
+                    //Email
                     child: Text(
-                      'Email',
+                      'Eメール',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -164,8 +167,9 @@ class _Login_screenState extends State<Login_screen> {
                   padding: EdgeInsets.symmetric(horizontal: 72),
                   child: Align(
                     alignment: Alignment.topLeft,
+                    //password
                     child: Text(
-                      'Password',
+                      'パスワード',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -221,8 +225,9 @@ class _Login_screenState extends State<Login_screen> {
                       ),
                       const Align(
                         alignment: Alignment.topLeft,
+                        //remember
                         child: Text(
-                          ' Remember',
+                          ' 覚えて',
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
@@ -259,8 +264,9 @@ class _Login_screenState extends State<Login_screen> {
                           borderRadius: BorderRadius.circular(7)),
                     ),
                     child: const Center(
+                      //login
                       child: Text(
-                        'Login',
+                        'ログイン',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
@@ -294,8 +300,9 @@ class _Login_screenState extends State<Login_screen> {
                       ),
                     );
                   },
+                  //forget password
                   child: const Text(
-                    'Forget Password',
+                    'パスワードを忘れた場合',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
@@ -322,12 +329,14 @@ class _Login_screenState extends State<Login_screen> {
                         text: TextSpan(
                       style: DefaultTextStyle.of(context).style,
                       children: const [
+                        //Already have an account?
                         TextSpan(
-                          text: 'Already have an account? ',
+                          text: 'すでにアカウントをお持ちですか？ ',
                           style: TextStyle(color: Colors.black, fontSize: 12),
                         ),
+                        //create account
                         TextSpan(
-                          text: 'Create Account',
+                          text: 'アカウントを作成する',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,

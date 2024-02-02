@@ -33,7 +33,8 @@ class _ConfirmState extends State<Confirm> {
           ),
           const Center(
             child: Text(
-              'Enter Verification Code',
+              //Enter Verification Code
+              '確認コードを入力してください',
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ),

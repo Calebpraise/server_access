@@ -7,6 +7,8 @@ class Alert {
   String serverName;
   String image;
   String time;
+  String? id;
+  String? userid;
   bool? isAccepted;
 
   // Constructor
@@ -16,6 +18,8 @@ class Alert {
     required this.serverName,
     required this.image,
     required this.time,
+    this.id,
+    this.userid,
     required this.isAccepted,
   });
 }
@@ -46,28 +50,28 @@ List<Alert> history = [
   // )
 ];
 
-List<Alert> notifications = [
-  Alert(
-      name: "警告: サーバーアクセス",
-      time: "09:00am",
-      country: "USA",
-      serverName: "サーバ 192.687:8080",
-      image: "assets/Ellipse.png",
-      isAccepted: true),
-  Alert(
-    name: "警告: サーバーアクセス",
-    time: "09:00am",
-    country: "USA",
-    serverName: "サーバ 192.687:8080",
-    image: "assets/Group.png",
-    isAccepted: false,
-  ),
-  Alert(
-    name: "警告: サーバーアクセス",
-    time: "09:00am",
-    country: "USA",
-    serverName: "サーバ 192.687:8080",
-    image: "assets/Group.png",
-    isAccepted: null,
-  )
-];
+// List<Alert> notifications = [
+//   // Alert(
+//   //     name: "警告: サーバーアクセス",
+//   //     time: "09:00am",
+//   //     country: "USA",
+//   //     serverName: "サーバ 192.687:8080",
+//   //     image: "assets/Ellipse.png",
+//   //     isAccepted: true),
+//   // Alert(
+//   //   name: "警告: サーバーアクセス",
+//   //   time: "09:00am",
+//   //   country: "USA",
+//   //   serverName: "サーバ 192.687:8080",
+//   //   image: "assets/Group.png",
+//   //   isAccepted: false,
+//   // ),
+//   // Alert(
+//   //   name: "警告: サーバーアクセス",
+//   //   time: "09:00am",
+//   //   country: "USA",
+//   //   serverName: "サーバ 192.687:8080",
+//   //   image: "assets/Group.png",
+//   //   isAccepted: null,
+//   // )
+// ];

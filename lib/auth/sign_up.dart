@@ -79,7 +79,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const Center(
                     child: Text(
-                  'Create Account',
+                  // create acccount
+                  'アカウントを作成する',
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w500,
@@ -92,8 +93,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 70),
                   child: Align(
                     alignment: Alignment.topLeft,
+                    //name
                     child: Text(
-                      'Name',
+                      '名前',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -133,8 +135,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 70),
                   child: Align(
                     alignment: Alignment.topLeft,
+
+                    //Email
                     child: Text(
-                      'Email',
+                      'Eメール',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -171,8 +175,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 70),
                   child: Align(
                     alignment: Alignment.topLeft,
+                    //password
                     child: Text(
-                      'Password',
+                      'パスワード',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -237,8 +242,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             borderRadius: BorderRadius.circular(7)),
                       ),
                       child: const Center(
+                        //register
                         child: Text(
-                          'Register',
+                          '登録する',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,
@@ -280,9 +286,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: Image.asset('assets/google.png'),
                         ),
                         const Align(
+                          // with google
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            ' Contiue with Google',
+                            //Contiue with Google
+                            'Google を続ける ',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 12,

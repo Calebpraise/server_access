@@ -4,6 +4,7 @@ import 'package:server_access/auth/confirm.dart';
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:server_access/constants.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
@@ -45,6 +46,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         // Successful sign-up
         print('A link has been sent to your gmail!');
         print('Response: ${response.body}');
+
+        await Constants.store.write("AUTHTOKEN", responseData["token"]);
         Navigator.push(
           context,
           MaterialPageRoute<void>(
@@ -78,7 +81,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         appBar: AppBar(
           title: const Center(
             child: Text(
-              'Forget Password',
+              //forget password
+              'パスワードを忘れた場合',
               style: TextStyle(color: Colors.black),
             ),
           ),
@@ -94,7 +98,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               ),
               const Center(
                 child: Text(
-                  'Enter Email Address',
+                  //Enter Email Address
+                  'メールアドレスを入力してください',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -163,7 +168,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     ),
                     child: const Center(
                       child: Text(
-                        'send',
+                        //send
+                        '送信',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,

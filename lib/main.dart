@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:server_access/constants.dart';
 import 'package:server_access/homescreen.dart';
 import 'package:server_access/auth/login_screen.dart';
 import 'package:server_access/splash.dart';
@@ -8,6 +11,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'firebase_options.dart';
 import 'package:rxdart/rxdart.dart';
+
+import 'package:http/http.dart' as http;
 
 // TODO: Add stream controller
 
@@ -50,19 +55,7 @@ Future<void> main() async {
     print('Permission granted: ${settings.authorizationStatus}');
   }
   const vapidKey = "BI50K7V7Sb8_FytPPwPWETJHMcvmHLVIVrWCIdmImvxHuP";
-  String? token;
 
-  if (DefaultFirebaseOptions.currentPlatform == DefaultFirebaseOptions.web) {
-    token = await messaging.getToken(
-      vapidKey: vapidKey,
-    );
-  } else {
-    token = await messaging.getToken();
-  }
-
-  if (kDebugMode) {
-    print('Registration Token=$token');
-  }
 
   // TODO: Set up foreground message handler
 
