@@ -18,7 +18,8 @@ class _ConfirmState extends State<Confirm> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Verification',
+            //Verification
+            '検証',
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -113,7 +114,8 @@ class _ConfirmState extends State<Confirm> {
                 ),
                 child: const Center(
                   child: Text(
-                    'send',
+                    //send
+                    '送信',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,

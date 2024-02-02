@@ -90,7 +90,7 @@ class _NewPasswordState extends State<NewPassword> {
         ),
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Column(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 90,
