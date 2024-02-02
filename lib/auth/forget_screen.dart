@@ -92,10 +92,11 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 160,
-              ),
+              // const SizedBox(
+              //   height: 240,
+              // ),
               const Center(
                 child: Text(
                   //Enter Email Address

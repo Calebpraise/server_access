@@ -16,6 +16,7 @@ class Notifications extends StatefulWidget {
 class _NotificationsState extends State<Notifications> {
   bool isLoading = false;
   Future<void> modifynotification(id, permission) async {
+    print(id + "   " + permission);
     try {
       print("modifying");
       final response = await http.post(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:server_access/constants.dart';
 import 'package:server_access/homescreen.dart';
@@ -13,6 +14,7 @@ import 'firebase_options.dart';
 import 'package:rxdart/rxdart.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // TODO: Add stream controller
 
@@ -49,23 +51,31 @@ Future<void> main() async {
     sound: true,
   );
 
-  // TODO: Register with FCM
-
   if (kDebugMode) {
     print('Permission granted: ${settings.authorizationStatus}');
   }
   const vapidKey = "BI50K7V7Sb8_FytPPwPWETJHMcvmHLVIVrWCIdmImvxHuP";
 
-
   // TODO: Set up foreground message handler
 
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    if (kDebugMode) {
-      print('Handling a foreground message: ${message.messageId}');
-      print('Message data: ${message.data}');
-      print('Message notification: ${message.notification?.title}');
-      print('Message notification: ${message.notification?.body}');
+    if (message.notification != null) {
+      // print("object");
+      Get.snackbar(message.notification!.title.toString(),
+          message.notification!.body.toString(),
+          snackPosition: SnackPosition.TOP,
+          // borderColor: Colors.grey,
+          icon: Image.asset("assets/logo.jpeg"));
     }
+
+    // print("object2");
+
+    // if (kDebugMode) {
+    //   print('Handling a foreground message: ${message.messageId}');
+    //   print('Message data: ${message.data}');
+    //   print('Message notification: ${message.notification?.title}');
+    //   print('Message notification: ${message.notification?.body}');
+    // }
 
     _messageStreamController.sink.add(message);
   });
@@ -104,7 +114,7 @@ class _MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
         debugShowCheckedModeBanner: false, home: Login_screen());
   }
 }

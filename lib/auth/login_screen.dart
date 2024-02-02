@@ -97,257 +97,263 @@ class _Login_screenState extends State<Login_screen> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                // Text('Last message from Firebase Messaging:',
-                //     style: Theme.of(context).textTheme.titleSmall),
-                // Text(_lastMessage,
-                //     style: Theme.of(context).textTheme.bodySmall),
-                // const SizedBox(
-                //   height: 60,
-                // ),
-                const Center(
-                  //ogin
-                  child: Text(
-                    'ログイン',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontFamily: 'HelveticaNeue',
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 72),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    //Email
-                    child: Text(
-                      'Eメール',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 70),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 64,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFFF7F1FF),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7)),
-                    ),
-                    child: Column(
-                      children: [
-                        TextField(
-                          controller: textEditingController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 72),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    //password
-                    child: Text(
-                      'パスワード',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 70),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 64,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFFF7F1FF),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7)),
-                    ),
-                    child: Column(
-                      children: [
-                        TextField(
-                          controller: passWordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            // labelText: 'Email',
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Text('Last message from Firebase Messaging:',
+                  //     style: Theme.of(context).textTheme.titleSmall),
+                  // Text(_lastMessage,
+                  //     style: Theme.of(context).textTheme.bodySmall),
+                  // const SizedBox(
+                  //   height: 60,
+                  // ),
 
-                            border: OutlineInputBorder(),
-                          ),
-                        ),
-                      ],
+                  const Center(
+                    //ogin
+                    child: Text(
+                      'ログイン',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: 'HelveticaNeue',
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 59),
-                  child: Row(
-                    children: [
-                      Checkbox(
-                        value: isTricked,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            isTricked = value ?? false;
-                          });
-                        },
-                      ),
-                      const SizedBox(
-                        width: 3,
-                      ),
-                      const Align(
-                        alignment: Alignment.topLeft,
-                        //remember
-                        child: Text(
-                          ' 覚えて',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      )
-                    ],
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isLoading = true;
-                    });
-
-                    signIn(textEditingController.text.toString(),
-                            passWordController.text.toString())
-                        .then((value) {
-                      setState(() {
-                        isLoading = false;
-                      });
-                      return null;
-                    });
-                  },
-                  child: Container(
-                    width: 263,
-                    height: 38,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFF985ACE),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7)),
-                    ),
-                    child: const Center(
-                      //login
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 72),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      //Email
                       child: Text(
-                        'ログイン',
+                        'Eメール',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontFamily: 'HelveticaNeue',
-                          fontWeight: FontWeight.w700,
-                        ),
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 35,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 70),
-                  child: Divider(
-                    color: Colors.black,
-                    thickness: 2,
+                  const SizedBox(
+                    height: 5,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) =>
-                            const ForgetPassword(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 64,
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFFF7F1FF),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7)),
                       ),
-                    );
-                  },
-                  //forget password
-                  child: const Text(
-                    'パスワードを忘れた場合',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontFamily: 'HelveticaNeue',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
+                      child: Column(
+                        children: [
+                          TextField(
+                            controller: textEditingController,
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => const SignUpScreen(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 72),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      //password
+                      child: Text(
+                        'パスワード',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
                       ),
-                    );
-                  },
-                  child: Center(
-                    child: RichText(
-                        text: TextSpan(
-                      style: DefaultTextStyle.of(context).style,
-                      children: const [
-                        //Already have an account?
-                        TextSpan(
-                          text: 'すでにアカウントをお持ちですか？ ',
-                          style: TextStyle(color: Colors.black, fontSize: 12),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 64,
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFFF7F1FF),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7)),
+                      ),
+                      child: Column(
+                        children: [
+                          TextField(
+                            controller: passWordController,
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              // labelText: 'Email',
+
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 59),
+                    child: Row(
+                      children: [
+                        Checkbox(
+                          value: isTricked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isTricked = value ?? false;
+                            });
+                          },
                         ),
-                        //create account
-                        TextSpan(
-                          text: 'アカウントを作成する',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
+                        const SizedBox(
+                          width: 3,
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          //remember
+                          child: Text(
+                            ' 覚えて',
+                            style: TextStyle(color: Colors.black),
                           ),
                         ),
+                        const SizedBox(
+                          width: 10,
+                        )
                       ],
-                    )),
+                    ),
                   ),
-                )
-              ],
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isLoading = true;
+                      });
+
+                      signIn(textEditingController.text.toString(),
+                              passWordController.text.toString())
+                          .then((value) {
+                        setState(() {
+                          isLoading = false;
+                        });
+                        return null;
+                      });
+                    },
+                    child: Container(
+                      width: 263,
+                      height: 38,
+                      decoration: ShapeDecoration(
+                        color: const Color(0xFF985ACE),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7)),
+                      ),
+                      child: const Center(
+                        //login
+                        child: Text(
+                          'ログイン',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontFamily: 'HelveticaNeue',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 70),
+                    child: Divider(
+                      color: Colors.black,
+                      thickness: 2,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              const ForgetPassword(),
+                        ),
+                      );
+                    },
+                    //forget password
+                    child: const Text(
+                      'パスワードを忘れた場合',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'HelveticaNeue',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              const SignUpScreen(),
+                        ),
+                      );
+                    },
+                    child: Center(
+                      child: RichText(
+                          text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: const [
+                          //Already have an account?
+                          TextSpan(
+                            text: 'すでにアカウントをお持ちですか？ ',
+                            style: TextStyle(color: Colors.black, fontSize: 12),
+                          ),
+                          //create account
+                          TextSpan(
+                            text: 'アカウントを作成する',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            ),
+                          ),
+                        ],
+                      )),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

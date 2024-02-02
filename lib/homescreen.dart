@@ -103,11 +103,15 @@ class _HomeScreenState extends State<HomeScreen> {
             history.add(Alert(
               country: element['country'],
               image: "assets/Group.png",
-              isAccepted: element["permision"] == null ? null : true,
+              isAccepted: element["permission"] == null
+                  ? null
+                  : element["permission"] == "allow"
+                      ? true
+                      : false,
               name: "Alert: Server Access",
               serverName: "Server ${element['ip_address']}",
               id: element["id"],
-              userid: element["userid"],
+              userid: element["user_id"],
               time: DateFormat('h:mm a')
                   .format(DateTime.parse(element['createdAt'])),
             ));
